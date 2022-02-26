@@ -7,7 +7,7 @@ package pertemuan4_kasus1;
 
 /**
  *
- * @author Tata
+ * @author : Salsabila Maharani Putri
  */
 public class Barang {
     private String kode_barang;
