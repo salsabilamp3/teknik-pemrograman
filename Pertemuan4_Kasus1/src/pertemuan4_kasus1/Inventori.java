@@ -7,8 +7,17 @@ package pertemuan4_kasus1;
 
 /**
  *
- * @author Tata
+ * <h1>Add Stok</h1>
+ * Kasus ini bertujuan untuk mencari solusi
+ * agar bisa membungkus variable stok
+ * sehingga hanya bisa dikenai operasi penambahan
+ * karena memang fungsinya hanya untuk menambahkan stok
+ * solusinya yaitu dengan membuat method addStok() di class Barang.
+ * 
+ * @author : Salsabila Maharani Putri
  */
+
+
 public class Inventori {
     Barang[] barangs;
     
@@ -23,7 +32,7 @@ public class Inventori {
     }
     void pengadaan() {
         initBarang();
-        barangs[0].addStok(20);
+        barangs[0].addStok(20); //menambahkan stok yang ada dengan 20
         barangs[1].addStok(20);
         showBarang();
     }
