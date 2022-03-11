@@ -31,6 +31,8 @@ public class RestaurantMain {
         menu.tambahMenuMakanan("Molen", 1_000, 20);
         menu.tampilMenuMakanan();
         
+        menu.kurangStok(2, 3);
+        menu.tampilMenuMakanan();
     }
     
 }
