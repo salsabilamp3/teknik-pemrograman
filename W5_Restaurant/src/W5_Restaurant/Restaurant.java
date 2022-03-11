@@ -10,41 +10,47 @@ package W5_Restaurant;
  * @author Salsabila Maharani Putri
  */
 public class Restaurant {
-    public String[] nama_makanan;
-    public double[] harga_makanan;
-    public int[] stok;
-    public static byte id = 0;
+    private DetailMenu[] menu;
+    private static byte id;
     
     public Restaurant(){
-        nama_makanan = new String[10];
-        harga_makanan = new double[10];
-        stok = new int[10];
+        menu = new DetailMenu[10];
+        for(int i=0; i<10; i++){
+            menu[i] = new DetailMenu();
+        }
+        id = 1;
     }
     
     public void tambahMenuMakanan(String nama, double harga, int stok){
-        this.nama_makanan[id] = nama;
-        this.harga_makanan[id] = harga;
-        this.stok[id] = stok;
+        this.menu[id].setNama_makanan(nama);
+        this.menu[id].setHarga_makanan(harga);
+        this.menu[id].setStok(stok);
     }
     
     public void tampilMenuMakanan(){
         for(int i=0; i<=id; i++){
             if(!isOutOfStock(i)){
-                System.out.println(i +". " + nama_makanan[i] + "[" + stok[i] + "]" + "\tRp. " + harga_makanan[i]);
+                System.out.println(i +". " + menu[i].getNama_makanan() + "[" + menu[i].getStok() + "]" 
+                        + "\tRp. " + menu[i].getHarga_makanan());
             }
         }
     }
     
     public boolean isOutOfStock(int id){
-        if(stok[id] == 0){
+        if(menu[id].getStok() == 0){
             return true;
         }else{
             return false;
         }
     }
-    
+   
     public static void nextId(){
         id++;
     }
     
+    public void kurangStok(int id, int jmlPesanan){
+        int stok = 0;
+        stok = menu[id].getStok() - jmlPesanan;
+        menu[id].setStok(stok);
+    }
 }
