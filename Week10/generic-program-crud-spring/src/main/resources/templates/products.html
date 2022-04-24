@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>List Products</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Products</h2>
+        <ul>
+            <li>
+                <span>ID Product |</span>
+                <span> Product Name |</span>
+                <span> Kategori |</span>
+                <span> Quantity |</span>
+                <span> Price</span>
+            </li>
+        </ul>
+        <ul>
+            <li th:each="prod : ${products}">
+                <span th:text="${prod.id}">Default</span>
+                <span> | </span>
+                <span th:text="${prod.name}">Default</span>
+                <span> | </span>
+                <span th:text="${prod.kategori}">Default</span>
+                <span> | </span>
+                <span th:text="${prod.quantity}">Default</span>
+                <span> | </span>
+                <span th:text="${prod.price}"> Default</span>
+            </li>
+        </ul>
+    </body>
+</html>

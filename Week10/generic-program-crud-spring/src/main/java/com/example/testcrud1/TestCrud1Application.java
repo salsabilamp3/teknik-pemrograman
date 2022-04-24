@@ -7,7 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TestCrud1Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestCrud1Application.class, args);
+            try {
+                SpringApplication.run(TestCrud1Application.class, args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 	}
 
 }

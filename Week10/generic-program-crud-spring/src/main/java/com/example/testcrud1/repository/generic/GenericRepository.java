@@ -13,5 +13,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author Tata
  */
 public interface GenericRepository<T extends BaseEntity> extends JpaRepository<T, Integer> {
-     Product findByName(String name);
+    Product findByName(String name);
 }

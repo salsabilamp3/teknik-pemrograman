@@ -14,18 +14,20 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "product")
+@Table(name = "products")
 public class Product extends BaseEntity {
     
-    @Column(name = "quantity", nullable = false, length = 225)
-    private int quantity;
     @Column(name = "price", nullable = false, length = 225)
     private double price;
+    @Column(name = "quantity", nullable = false, length = 225)
+    private int quantity;
+    @Column(name = "kategori", nullable = false, length = 225)
+    private String kategori;
 
     public Product() {
         super();
     }
-
+    
     public int getQuantity() {
         return quantity;
     }
@@ -41,6 +43,13 @@ public class Product extends BaseEntity {
     public void setPrice(double price) {
         this.price = price;
     }
-    
+
+    public String getKategori() {
+        return kategori;
+    }
+
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
+    }
     
 }

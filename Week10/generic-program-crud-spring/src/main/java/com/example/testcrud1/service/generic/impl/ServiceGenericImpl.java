@@ -9,6 +9,7 @@ import com.example.testcrud1.entity.baseEntity.BaseEntity;
 import com.example.testcrud1.repository.ProductRepository;
 import com.example.testcrud1.repository.generic.GenericRepository;
 import com.example.testcrud1.service.generic.ServiceGeneric;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,10 +21,13 @@ public class ServiceGenericImpl<T extends BaseEntity> implements ServiceGeneric<
 
     @Autowired
     protected GenericRepository<T> genericRepository;
+    
     @Override
     public List<T> findAll() throws Exception {
         try {
-            return genericRepository.findAll(); 
+            List<T> products = new ArrayList<>();
+            genericRepository.findAll().forEach(products::add);
+            return products;
 	} catch (Exception e) {
             throw e;
 	}
