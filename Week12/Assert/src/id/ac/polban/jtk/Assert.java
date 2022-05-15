@@ -47,7 +47,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author Tata
+ * @author Salsabila Maharani Putri / 211524026
  */
 public class Assert {
 
